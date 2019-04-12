@@ -189,3 +189,4 @@ class PSNHandler {
   }
 }
 
+module.exports = {getCookie, PSNHandler};
