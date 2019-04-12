@@ -13,13 +13,13 @@ https://tusticles.com/psn-php/first_login.html <br/>
 *es6:*<br/>
 `import {getCookie, PSNHandler} from 'psn-live-async';`
 
-3. Run getCookie function alone. You will get an npsso token you need to use for the rest of the calls.
-```
+3. Run getCookie function alone. You will get an npsso token you need to use for the rest of the calls.<br/>
+`
 getCookie(ticket_uuid, code_you_got_on_your_mobile_device).then(npsso => console.log(npsso));
-```
+`
 
-4. Create an object
+4. Create an object<br/>
 `const psnObj = new PSNHandler(npsso);`
 
-5. Call endpoint to retreive a user's Playstation Network User Id.
+5. Call endpoint to retreive a user's Playstation Network User Id.<br/>
 `psnObj.getUserIdPSN('Ninja').then(resp => console.log(resp))`
