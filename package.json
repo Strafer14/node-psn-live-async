@@ -1,0 +1,34 @@
+{
+  "name": "psn-live-async",
+  "version": "1.0.0",
+  "description": "",
+  "main": "psn-async-api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Strafer14/node-psn-live-async.git"
+  },
+  "keywords": [
+    "psn",
+    "async",
+    "es6",
+    "node",
+    "js",
+    "nodejs",
+    "javascript",
+    "playstation"
+  ],
+  "author": "mostrovsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Strafer14/node-psn-live-async/issues"
+  },
+  "homepage": "https://github.com/Strafer14/node-psn-live-async#readme",
+  "dependencies": {
+    "async-disk-cache": "^1.3.4",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
+}
