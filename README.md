@@ -7,10 +7,9 @@ Requires a valid playstation account.
 1. Get the ticket_uuid(login_token) and code according to these instructions below
 https://tusticles.com/psn-php/first_login.html <br/>
 
-2. Import the library
-*pre-es6:*<br/>
+2. Import the library<br/>
 `var psn = require('psn-live-async');`<br/>
-*es6:*<br/>
+*OR if supported*<br/>
 `import psn from 'psn-live-async';`
 
 3. Run getCookie function alone. You will get an npsso token you need to use for the rest of the calls.<br/>
