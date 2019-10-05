@@ -112,7 +112,7 @@ class PSNHandler {
    */
   async _refreshTokens() {
     const cacheRefreshToken = await psnCache.get("psn_refresh_token");
-    if (cacheRefreshToken.value) {
+    if (cacheRefreshToken.value && cacheRefreshToken.value !== "undefined") {
       console.log("Refreshing PSN tokens");
       const refresh_token = cacheRefreshToken.value;
       const auth_data = {
@@ -161,7 +161,7 @@ class PSNHandler {
    */
   async _isTokenExpired() {
     const cacheExpireTime = await psnCache.get("psn_expires_at");
-    if (cacheExpireTime.value)
+    if (cacheExpireTime.value && cacheExpireTime.value !== "undefined")
       return new Date().getTime() / 1000 > cacheExpireTime.value;
     return true;
   }
@@ -172,10 +172,10 @@ class PSNHandler {
    */
   async getUserIdPSN(username) {
     const cachePsuid = await psnCache.get("psuidForGamertag-" + username);
-    if (cachePsuid.value) return cachePsuid.value;
+    if (cachePsuid.value && cachePsuid.value !== "undefined") return cachePsuid.value;
     else {
       let cacheToken = await psnCache.get("psn_access_token");
-      if (!cacheToken.value || (await this._isTokenExpired())) {
+      if ((!cacheToken.value && cacheToken.value !== "undefined") || (await this._isTokenExpired())) {
         await this._refreshTokens();
         cacheToken = await psnCache.get("psn_access_token");
       }
@@ -189,4 +189,4 @@ class PSNHandler {
   }
 }
 
-module.exports = {getCookie, PSNHandler};
+module.exports = { getCookie, PSNHandler };
